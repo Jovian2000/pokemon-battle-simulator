@@ -1,0 +1,15 @@
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\bin\Debug\net7.0\PokemonSim.exe
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\bin\Debug\net7.0\PokemonSim.deps.json
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\bin\Debug\net7.0\PokemonSim.runtimeconfig.json
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\bin\Debug\net7.0\PokemonSim.dll
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\bin\Debug\net7.0\PokemonSim.pdb
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\obj\Debug\net7.0\PokemonSim.csproj.AssemblyReference.cache
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\obj\Debug\net7.0\PokemonSim.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\obj\Debug\net7.0\PokemonSim.AssemblyInfoInputs.cache
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\obj\Debug\net7.0\PokemonSim.AssemblyInfo.cs
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\obj\Debug\net7.0\PokemonSim.csproj.CoreCompileInputs.cache
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\obj\Debug\net7.0\PokemonSim.dll
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\obj\Debug\net7.0\refint\PokemonSim.dll
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\obj\Debug\net7.0\PokemonSim.pdb
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\obj\Debug\net7.0\PokemonSim.genruntimeconfig.cache
+C:\Users\jovia\Desktop\school\leerjaar2\school-bestanden\object-oriented-programming\pokemon-battle-simulator\PokemonSim\obj\Debug\net7.0\ref\PokemonSim.dll
