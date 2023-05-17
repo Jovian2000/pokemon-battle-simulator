@@ -17,9 +17,9 @@ class Charmander
 		return name;
 	}
 
-    public void setName(string newName)
+    public void setName(string name)
     {
-        name = newName;
+        this.name = name;
     }
 
 	public void battleCry()
