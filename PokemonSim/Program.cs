@@ -46,17 +46,27 @@
             trainer1.setBelt(starterBelt);
             trainer2.setBelt(starterBelt);
 
-            foreach (Pokeball pokeball in starterBelt)
-            {   
-                Console.WriteLine(trainer1.getName() + ": ");
-                trainer1.throwPokeball(pokeball);
-                pokeball.pokemon.battleCry();
-                trainer1.returnPokemon(pokeball);
+            while (true)
+            {
+                foreach (Pokeball pokeball in starterBelt)
+                {
+                    Console.WriteLine(trainer1.getName() + ": ");
+                    trainer1.throwPokeball(pokeball);
+                    pokeball.pokemon.battleCry();
+                    trainer1.returnPokemon(pokeball);
 
-                Console.WriteLine(trainer2.getName() + ": ");
-                trainer2.throwPokeball(pokeball);
-                pokeball.pokemon.battleCry(); 
-                trainer2.returnPokemon(pokeball);
+                    Console.WriteLine(trainer2.getName() + ": ");
+                    trainer2.throwPokeball(pokeball);
+                    pokeball.pokemon.battleCry();
+                    trainer2.returnPokemon(pokeball);
+
+                    Console.WriteLine("Do you want to play again? (y/n)");
+                    string answer = Console.ReadLine();
+                    if (answer.ToLower() != "y")
+                    {
+                        break;
+                    }
+                }
             }
         }
     }
