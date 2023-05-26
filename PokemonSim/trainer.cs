@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 
-class Trainer
+public class Trainer
 {
 	public string name;
 	public List<Pokeball> belt;
@@ -47,10 +47,10 @@ class Trainer
 	//	belt.RemoveAt(index);
 	//}
 
-	public void throwPokeball(Pokeball pokeball)
+	public void throwPokeball(Pokeball pokemon)
 	{
-		Console.WriteLine("Go " + pokeball.getPokemon() + "!!");
-		pokeball.openPokeball();
+		Console.WriteLine("Go " + pokemon.getPokemon() + "!!");
+		pokemon.openPokeball();
     }
 
 	public void returnPokemon(Pokeball pokemon)

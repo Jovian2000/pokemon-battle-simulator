@@ -1,29 +1,16 @@
 ﻿using System;
-class Charmander
+public class Charmander : Pokemon
 {
-	public string name;
-	public string strength;
-	public string weakness;
 
-	public Charmander(string name, string strength, string weakness)
+	public Charmander(string name, string strength, string weakness) : base(name, strength, weakness)
 	{
-		this.name = name;
-		this.strength = strength;
-		this.weakness = weakness;
 	}
 
-	public string getName()
-	{
-		return name;
-	}
 
-    public void setName(string name)
+    public override void battleCry()
     {
-        this.name = name;
+        Console.WriteLine(getName() + " uses battleCry");
+        Console.WriteLine("'Charmander rawr'");
     }
 
-	public void battleCry()
-	{
-		Console.WriteLine(name + " uses battle cry");
-	}
 }

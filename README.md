@@ -13,3 +13,10 @@
     title="Assignment 2"
     style="display: inline-block; margin: 0 auto; max-width: 30px">
 
+## Assignment 3
+<img
+    src="/screenshots/assignment-3.png"
+    alt="Screenshot Assignment 3"
+    title="Assignment 3"
+    style="display: inline-block; margin: 0 auto; max-width: 30px">
+

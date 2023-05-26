@@ -1,16 +1,16 @@
 ﻿using System;
 
-class Pokeball
+public class Pokeball
 {
 	public bool state; 
-	public Charmander pokemon;
-	public Pokeball(bool state, Charmander pokemon)
+	public Pokemon pokemon;
+	public Pokeball(bool state, Pokemon pokemon)
 	{
 		this.state = state;
 		this.pokemon = pokemon;
 	}
 
-	public void setPokemon(Charmander pokemon)
+	public void setPokemon(Pokemon pokemon)
 	{
 		this.pokemon = pokemon;
 	}

@@ -34,14 +34,22 @@
                 string nameInput2 = Console.ReadLine();
                 Trainer trainer2 = new Trainer(nameInput2);
 
-                Charmander charmender = new Charmander("charmender", "fire", "water");
-                Pokeball newPokeball = new Pokeball(true, charmender);
+                Charmander charmender = new Charmander("charmender", "Fire", "Water");
+                Squirtle squirlte = new Squirtle("Squirtle", "Water", "Grass");
+                Bulbasaur bulbasaur = new Bulbasaur("Bulbasaur", "Grass", "Fire");
+
+                Pokeball charmanderPokeball = new Pokeball(true, charmender);
+                Pokeball squirtlePokeball = new Pokeball(true, squirlte);
+                Pokeball bulbasaurPokeball = new Pokeball(true, bulbasaur);
+
 
                 List<Pokeball> starterBelt = new List<Pokeball>();
 
-                for (int i = 0; i < 6; i++) 
+                for (int i = 0; i < 2; i++) 
                 {
-                    starterBelt.Add(newPokeball);
+                    starterBelt.Add(charmanderPokeball);
+                    starterBelt.Add(squirtlePokeball);
+                    starterBelt.Add(bulbasaurPokeball);
                 }
 
                 trainer1.setBelt(starterBelt);
