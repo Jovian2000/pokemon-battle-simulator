@@ -3,9 +3,9 @@ using System.Xml.Linq;
 
 public abstract class Pokemon
 {
-    public string name;
-    public string strength;
-    public string weakness;
+    private string name;
+    private string strength;
+    private string weakness;
     public Pokemon(string name, string strength, string weakness)
 	{
         this.name = name;
@@ -22,5 +22,25 @@ public abstract class Pokemon
     public void setName(string name)
     {
         this.name = name;
+    }
+
+    public string getStrength()
+    {
+        return strength;
+    }
+
+    public void setStrength(string strength)
+    {
+        this.strength = strength;
+    }
+
+    public string getWeakness()
+    {
+        return weakness;
+    }
+
+    public void setWeakness(string weakness)
+    {
+        this.weakness = weakness;
     }
 }

@@ -9,7 +9,7 @@ public class Charmander : Pokemon
 
     public override void battleCry()
     {
-        Console.WriteLine(getName() + " uses battleCry");
+        Console.WriteLine(getName() + " uses battle cry");
         Console.WriteLine("'Charmander rawr'");
     }
 

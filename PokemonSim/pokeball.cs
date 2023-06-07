@@ -2,12 +2,25 @@
 
 public class Pokeball
 {
-	public bool state; 
-	public Pokemon pokemon;
-	public Pokeball(bool state, Pokemon pokemon)
+	private bool state; 
+	private Pokemon pokemon;
+	private bool health;
+	private int id;
+	public Pokeball(bool state, Pokemon pokemon, int id)
 	{
 		this.state = state;
 		this.pokemon = pokemon;
+		this.id = id;
+		health = true;
+	}
+
+	public void setState(bool state)
+	{
+		this.state = state;
+	}
+	public bool getState()
+	{
+		return state;
 	}
 
 	public void setPokemon(Pokemon pokemon)
@@ -15,9 +28,29 @@ public class Pokeball
 		this.pokemon = pokemon;
 	}
 
-	public string getPokemon()
+	public Pokemon getPokemon()
 	{
-		return pokemon.name;
+		return pokemon;
+	}
+
+	public void setHealth(bool health)
+	{
+		this.health = health;
+	}
+
+	public bool getHealth() 
+	{
+		return health;
+	}
+
+	public void setId(int id)
+	{
+		this.id = id;
+	}
+
+	public int getId()
+	{
+		return id;
 	}
 	public void openPokeball()
 	{
