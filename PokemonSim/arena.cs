@@ -2,26 +2,34 @@
 
 public class Arena
 {
-	private int pointsTrainer1;
-	private int pointsTrainer2;
+    private Battle battle;
+	private int pointsChallenger;
+	private int pointsOpponent;
+	private int drawPoints;
 	private int rounds;
     private int battles;
-	public Arena()
+	public Arena(Battle battle)
 	{
-		pointsTrainer1 = 0;
-		pointsTrainer2 = 0;
+        this.battle = battle;
+		pointsChallenger = 0;
+		pointsOpponent = 0;
+        drawPoints = 0;
 		rounds = 0;
         battles = 0;
 	}
 
-	public int getPointsTrainer1()
+    public Battle getBattle() 
+    {
+        return battle;
+    }
+	public int getPointsChallenger()
 	{
-		return pointsTrainer1;
+		return pointsChallenger;
 	}
 
-    public int getPointsTrainer2()
+    public int getPointsOpponent()
     {
-        return pointsTrainer2;
+        return pointsOpponent;
     }
 
 	public int getRounds()
@@ -34,13 +42,18 @@ public class Arena
         return battles;
     }
 
-	public void setPointsTrainer1(int pointsTrainer1)
+    public void setBattle(Battle battle)
+    {
+        this.battle = battle;
+    }
+
+	public void setPointsChallenger(int pointschallenger)
 	{
-		this.pointsTrainer1 = pointsTrainer1;
+		this.pointsChallenger = pointschallenger;
 	}
-	public void setPointsTrainer2(int pointsTrainer2)
+	public void setPointsOpponent(int pointsOpponent)
 	{
-		this.pointsTrainer2 = pointsTrainer2;
+		this.pointsOpponent = pointsOpponent;
 	}
 
 	public void setRounds(int rounds)
@@ -57,11 +70,11 @@ public class Arena
     {
         Console.WriteLine("Enter your name trainer 1:");
         string nameInput1 = Console.ReadLine();
-        Trainer trainer1 = new Trainer(nameInput1);
+        Trainer challenger = new Trainer(nameInput1);
 
         Console.WriteLine("Enter your name trainer 2:");
         string nameInput2 = Console.ReadLine();
-        Trainer trainer2 = new Trainer(nameInput2);
+        Trainer opponent = new Trainer(nameInput2);
 
         Charmander charmander = new Charmander("Charmander", "Fire", "Water");
         Squirtle squirlte = new Squirtle("Squirtle", "Water", "Grass");
@@ -87,37 +100,37 @@ public class Arena
             starterBelt2.Add(bulbasaurPokeball);
         }
 
-        trainer1.setBelt(starterBelt1);
-        trainer2.setBelt(starterBelt2);
+        challenger.setBelt(starterBelt1);
+        opponent.setBelt(starterBelt2);
         List<Trainer> trainers = new List<Trainer>();
-        trainers.Add(trainer1);
-        trainers.Add(trainer2);
+        trainers.Add(challenger);
+        trainers.Add(opponent);
         return trainers;
     }
-    public void checkResult(Trainer trainer1, Trainer trainer2)
+    public void checkResult(Trainer challenger, Trainer opponent)
     {
         Console.WriteLine("\nThis is the final result");
-        Console.WriteLine("Total wins " + trainer1.getName() + ": " + pointsTrainer1);
-        Console.WriteLine("Total wins " + trainer2.getName() + ": " + pointsTrainer2);
+        Console.WriteLine("Total wins " + challenger.getName() + ": " + pointsChallenger);
+        Console.WriteLine("Total wins " + opponent.getName() + ": " + pointsOpponent);
+        Console.WriteLine("Total draws: " + drawPoints);
         Console.WriteLine("Total rounds: " + rounds);
         Console.WriteLine("Total battles: " + battles);
     }
 	public void arenaBattle()
 	{
-        List<Trainer> trainers = setStandardTrainers();
-        Trainer trainer1 = trainers[0];
-        Trainer trainer2 = trainers[1];
-        Battle battle = new Battle(trainer1, trainer2);
         while (true)
         {
             string result = battle.pokemonBattle();
             if (result == "trainer 1")
             {
-                pointsTrainer1 += 1;
+                pointsChallenger += 1;
             }
             else if (result == "trainer 2")
             {
-                pointsTrainer2 += 1;
+                pointsOpponent += 1;
+            } else
+            {
+                drawPoints += 1;
             }
             rounds += 1;
             battles += battle.getRoundsInBattle();
@@ -125,13 +138,13 @@ public class Arena
             string answer = Console.ReadLine();
             if (answer.ToLower() != "y")
             {
-                checkResult(trainer1, trainer2);
+                checkResult(battle.getChallenger(), battle.getOpponent());
                 break;
             } 
             else
             {
-                battle.getTrainer1().reviveAll();
-                battle.getTrainer2().reviveAll();
+                battle.getChallenger().reviveAll();
+                battle.getOpponent().reviveAll();
             } 
         }
     }

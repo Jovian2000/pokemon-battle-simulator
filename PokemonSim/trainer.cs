@@ -99,7 +99,6 @@ public class Trainer
 			return false;
 		}
 	}
-
 	public void reviveAll()
 	{
 		foreach (Pokeball pokeball in belt)
@@ -107,7 +106,6 @@ public class Trainer
 			pokeball.setHealth(true);
 		}
 	}
-
 	public void printPokemons()
 	{
 		foreach (Pokeball pokeball in belt)

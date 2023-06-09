@@ -43,4 +43,9 @@ public abstract class Pokemon
     {
         this.weakness = weakness;
     }
+
+//    public bool isWeakAgainst(Pokemon other)
+//    {
+//        return this.getWeakness() == other.getStrength();
+//    }
 }
