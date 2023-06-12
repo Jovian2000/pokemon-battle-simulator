@@ -71,7 +71,7 @@ public class Battle
 			{
                 challengerPokeball = challenger.pickRandomPokeball();
                 challenger.throwPokeball(challengerPokeball);
-            }
+            }	
             else
 			{
                 opponentPokeball = opponent.pickRandomPokeball();
@@ -125,8 +125,8 @@ public class Battle
         }
 		Console.WriteLine("End");
 		Console.WriteLine("Battles fought: " + numBattle);
-		Console.WriteLine(challenger.getName() + ": " + pointChallenger);
-		Console.WriteLine(opponent.getName() + ": " + pointOpponent);
+		Console.WriteLine("points " + challenger.getName() + ": " + pointChallenger);
+		Console.WriteLine("points " + opponent.getName() + ": " + pointOpponent);
 		Console.WriteLine("Draws: " + drawPoints);
         roundsInBattle = numBattle;
         if (pointChallenger > pointOpponent)

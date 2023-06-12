@@ -15,7 +15,6 @@ public class Trainer
 	{
 		this.name = name;
 	}
-
 	public void setBelt(List<Pokeball> belt)
 	{
 		this.belt = belt;
@@ -99,6 +98,7 @@ public class Trainer
 			return false;
 		}
 	}
+	
 	public void reviveAll()
 	{
 		foreach (Pokeball pokeball in belt)
@@ -113,4 +113,8 @@ public class Trainer
 			Console.WriteLine(pokeball.getPokemon().getName());
 		}
 	}
+//	public void createBelt(Pokeball pokeball)
+//	{
+//		
+//	}
 }
