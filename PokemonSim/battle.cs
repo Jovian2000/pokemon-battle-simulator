@@ -1,5 +1,4 @@
 ﻿using System;
-
 public class Battle
 {
 	private Trainer challenger;
@@ -15,7 +14,6 @@ public class Battle
 	{
 		return challenger;
 	}
-
 	public Trainer getOpponent()
 	{
 		return opponent;
@@ -48,20 +46,11 @@ public class Battle
 
         while (true)
 		{
-//			Pokemon first = challengerPokeball.getPokemon();
-//          Pokemon second = opponentPokeball.getPokemon();
-
-//			if (first.isWeakAgainst(second))
-//			{
-
-//			}
-
-
             if (!challenger.checkBelt() || !opponent.checkBelt())
 			{
 				break;
 			}
- 
+			
 			if (winner == "trainer 1")
 			{
                 opponentPokeball = opponent.pickRandomPokeball();
@@ -79,19 +68,24 @@ public class Battle
                 challenger.throwPokeball(challengerPokeball);
                 opponent.throwPokeball(opponentPokeball);
             }
-			Console.WriteLine(challenger.getName() + " picked " + challengerPokeball.getPokemon().getName());
-			Console.WriteLine(opponent.getName() + " picked " + opponentPokeball.getPokemon().getName());
-			if (challengerPokeball.getPokemon().getStrength() == opponentPokeball.getPokemon().getWeakness())
+
+            Pokemon challengerPokemon = challengerPokeball.getPokemon();
+            Pokemon opponentPokemon = opponentPokeball.getPokemon();
+
+            Console.WriteLine(challenger.getName() + " picked " + challengerPokemon.getName());
+			Console.WriteLine(opponent.getName() + " picked " + opponentPokemon.getName());
+
+            if (challengerPokemon.getStrength() == opponentPokemon.getWeakness())
 			{
-				opponentPokeball.setHealth(false);
+				opponentPokemon.setHealth(false);
 				opponent.returnPokemon(opponentPokeball);
 				Console.WriteLine(challenger.getName() + " wins!\n");
 				winner = "trainer 1";
 				pointChallenger += 1;
 			}
-			else if (opponentPokeball.getPokemon().getStrength() == challengerPokeball.getPokemon().getWeakness())
+			else if (opponentPokemon.getStrength() == challengerPokemon.getWeakness())
 			{
-				challengerPokeball.setHealth(false);
+				challengerPokemon.setHealth(false);
                 challenger.returnPokemon(challengerPokeball);
 				Console.WriteLine(opponent.getName() + " wins!\n");
                 winner = "trainer 2";
@@ -101,20 +95,20 @@ public class Battle
 			{
 				if (winner == "trainer 1")
 				{
-                    challengerPokeball.setHealth(false);
+                    challengerPokemon.setHealth(false);
                     challenger.returnPokemon(challengerPokeball);
 					winner = "trainer 2";
                 } 
 				else if (winner == "trainer 2")
 				{
-                    opponentPokeball.setHealth(false);
+                    opponentPokemon.setHealth(false);
                     opponent.returnPokemon(opponentPokeball);
 					winner = "trainer 1";
 				} 
 				else
 				{
-                    opponentPokeball.setHealth(false);
-                    challengerPokeball.setHealth(false);
+                    opponentPokemon.setHealth(false);
+                    challengerPokemon.setHealth(false);
                     challenger.returnPokemon(challengerPokeball);
                     opponent.returnPokemon(opponentPokeball);
                 }
@@ -123,12 +117,14 @@ public class Battle
 			}
             numBattle += 1;
         }
+
 		Console.WriteLine("End");
 		Console.WriteLine("Battles fought: " + numBattle);
 		Console.WriteLine("points " + challenger.getName() + ": " + pointChallenger);
 		Console.WriteLine("points " + opponent.getName() + ": " + pointOpponent);
 		Console.WriteLine("Draws: " + drawPoints);
         roundsInBattle = numBattle;
+
         if (pointChallenger > pointOpponent)
 		{
 			Console.WriteLine(challenger.getName() + " wins the battle!");
