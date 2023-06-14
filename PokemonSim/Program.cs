@@ -15,8 +15,6 @@
             challenger.setStandardBelt();
             opponent.setStandardBelt();
 
-            challenger.printPokemons();
-            opponent.printPokemons();
             Battle battle = new Battle(challenger, opponent);
             Arena arena = new Arena(battle);
             arena.arenaBattle();
