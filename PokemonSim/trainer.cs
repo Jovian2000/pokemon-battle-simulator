@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
 public class Trainer
 {
@@ -16,12 +17,11 @@ public class Trainer
 	public void setBelt(List<Pokeball> belt)
 	{
 		int maxBelt = 6;
-		if (belt.Count <= maxBelt) 
+        errorHandling(maxBelt);
+
+        if (belt.Count <= maxBelt) 
 		{
 			this.belt = belt;
-		} else
-		{
-			Console.WriteLine("Six is the limit");
 		}
 	}
 	public string getName()
@@ -34,8 +34,10 @@ public class Trainer
 	}
 	public void addPokeball (Pokeball pokeball)
 	{
-        int maxBelt = 6;
-        if (belt.Count <= maxBelt)
+        int maxNum = 5;
+		errorHandling(maxNum);
+
+        if (belt.Count <= maxNum)
 		{
 			belt.Add(pokeball);
 		} 
@@ -112,21 +114,40 @@ public class Trainer
 	}
 	public void setStandardBelt()
 	{
-        List<Pokeball> trainerBelt = new List<Pokeball>();
-        int i = 0;
-        while (i != 6)
+		try
+		{
+			int i = 1;
+			while (i < 6)
+			{
+				Pokeball charmanderPokeball = new Pokeball(true, new Charmander("Charmander", i));
+				addPokeball(charmanderPokeball);
+				i++;
+				Pokeball squirtlePokeball = new Pokeball(true, new Squirtle("Squirtle", i));
+				addPokeball(squirtlePokeball);
+				i++;
+				Pokeball bulbasaurPokeball = new Pokeball(true, new Bulbasaur("Bulbasaur", i));
+				addPokeball(bulbasaurPokeball);
+				i++;
+			}
+		}
+         catch (ArgumentOutOfRangeException e)
+		{
+			Console.WriteLine(e.ToString());
+		}
+    }
+	private void errorHandling(int num)
+	{
+		int maxNum = num;
+		int minNum = 0;
+
+        if (belt.Count > maxNum)
         {
-            Pokeball charmanderPokeball = new Pokeball(true, new Charmander("Charmander", i));
-            trainerBelt.Add(charmanderPokeball);
-            i++;
-            Pokeball squirtlePokeball = new Pokeball(true, new Squirtle("Squirtle", i));
-            trainerBelt.Add(squirtlePokeball);
-            i++;
-            Pokeball bulbasaurPokeball = new Pokeball(true, new Bulbasaur("Bulbasaur", i));
-            trainerBelt.Add(bulbasaurPokeball);
-			i++;
+            throw new ArgumentOutOfRangeException("The belt can only contain six pokeballs or less.");
         }
-		setBelt(trainerBelt);
+        else if (belt.Count < minNum)
+        {
+            throw new ArgumentOutOfRangeException("The belt size cannot be lower than 0");
+        }
     }
 //	public void createBelt(Pokeball pokeball)
 //	{

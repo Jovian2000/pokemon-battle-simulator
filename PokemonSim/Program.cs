@@ -14,6 +14,10 @@
 
             challenger.setStandardBelt();
             opponent.setStandardBelt();
+            challenger.printPokemons();
+            opponent.printPokemons();
+            Console.WriteLine(challenger.getBelt().Count);
+            Console.WriteLine(opponent.getBelt().Count);
 
             Battle battle = new Battle(challenger, opponent);
             Arena arena = new Arena(battle);

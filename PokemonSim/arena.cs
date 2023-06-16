@@ -59,7 +59,7 @@ public class Arena
     public void checkResult(Trainer challenger, Trainer opponent)
     {
         Console.WriteLine("\nThis is the final result");
-        Console.WriteLine("Total battles: " + battles);
+        Console.WriteLine("Total battles: " + battles); 
         Console.WriteLine("Total rounds: " + rounds);
         Console.WriteLine("Total rounds win " + challenger.getName() + ": " + pointsChallenger);
         Console.WriteLine("Total rounds win " + opponent.getName() + ": " + pointsOpponent);
