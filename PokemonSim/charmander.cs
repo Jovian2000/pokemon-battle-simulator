@@ -3,8 +3,8 @@ public class Charmander : Pokemon
 {
 	public Charmander(string name, int id) : base(name, id)
 	{
-        setStrength(AttributeType.Fire);
-        setWeakness(AttributeType.Water);
+        setStrength(AttributeTypes.Fire);
+        setWeakness(AttributeTypes.Water);
 	}
     public override void battleCry()
     {

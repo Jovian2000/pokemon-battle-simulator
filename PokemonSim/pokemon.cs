@@ -3,15 +3,15 @@ using System.Xml.Linq;
 public abstract class Pokemon
 {
     private string name;
-    private AttributeType strength;
-    private AttributeType weakness;
+    private AttributeTypes strength;
+    private AttributeTypes weakness;
 	private bool health;
     private int id;
     public Pokemon(string name, int id)
 	{
         this.name = name;
-        strength = new AttributeType();
-        weakness = new AttributeType();
+        strength = new AttributeTypes();
+        weakness = new AttributeTypes();
         health = true;
         this.id = id;
     }
@@ -24,19 +24,19 @@ public abstract class Pokemon
     {
         this.name = name;
     }
-    public AttributeType getStrength()
+    public AttributeTypes getStrength()
     {
         return strength;
     }
-    public void setStrength(AttributeType strength)
+    public void setStrength(AttributeTypes strength)
     {
         this.strength = strength;
     }
-    public AttributeType getWeakness()
+    public AttributeTypes getWeakness()
     {
         return weakness;
     }
-    public void setWeakness(AttributeType weakness)
+    public void setWeakness(AttributeTypes weakness)
     {
         this.weakness = weakness;
     }

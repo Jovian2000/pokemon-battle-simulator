@@ -1,5 +1,5 @@
 ﻿using System;
-public enum AttributeType
+public enum AttributeTypes
 {
     Fire,
     Grass,

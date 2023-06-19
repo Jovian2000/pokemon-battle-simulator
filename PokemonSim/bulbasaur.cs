@@ -3,8 +3,8 @@ public class Bulbasaur : Pokemon
 {
     public Bulbasaur(string name, int id) : base(name, id)
     {
-        setStrength(AttributeType.Grass);
-        setWeakness(AttributeType.Fire);
+        setStrength(AttributeTypes.Grass);
+        setWeakness(AttributeTypes.Fire);
     }
     public override void battleCry()
     {
